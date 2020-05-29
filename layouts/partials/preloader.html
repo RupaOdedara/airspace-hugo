@@ -1,0 +1,7 @@
+{{- if .Site.IsServer -}} {{ "<!-- Layout: partial/preloader.html -->" |safeHTML }} {{- end -}}
+<div class="preloader" style="display: none;">
+  {{ if ne .Site.Params.preloader.preloader "" }}
+  <img src="{{ .Site.Params.preloader.preloader | absURL }} " alt="preloader">
+  {{ end }}
+</div>
+{{- if .Site.IsServer -}} {{ "<!-- Layout: partial/preloader.html -->" |safeHTML }} {{- end -}}

@@ -1,0 +1,6 @@
+{{ define "main" }}
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: _blog/single.html -->" |safeHTML }} {{- end -}}
+    
+    {{ partial "page-title.html" . }}
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: End blog/single.html -->" |safeHTML }} {{- end -}}
+{{ end }}

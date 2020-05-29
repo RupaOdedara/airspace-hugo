@@ -1,0 +1,6 @@
+{{ define "main" }}
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: page/contact.html -->" |safeHTML }} {{- end -}}
+
+    {{ partial "page-title.html" . }}
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: End page/contact.html -->" |safeHTML }} {{- end -}}
+{{ end }}

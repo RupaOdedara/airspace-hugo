@@ -1,0 +1,45 @@
+{{- if .Site.IsServer -}} {{ "<!-- Layout: partial/header.html -->" |safeHTML }} {{- end -}}
+  <header class="navigation">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="navbar">
+            <div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+              <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+              <a class="navbar-brand" href="/airspace-hugo/en"><img src="http://demo.themefisher.com/airspace-hugo/images/logo.png" alt="Logo" class="img-responsive"></a>
+            </div>
+            <div class="navbar-collapse collapse" id="navigation" aria-expanded="false" style="height: 1px;">
+              <ul class="nav navbar-nav navbar-right">
+                
+                {{ range .Site.Menus.main }}
+                  {{ if .HasChildren }}
+                  <li class="dropdown">
+                    <a href="{{ .URL }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="ion-ios-arrow-down"></span></a>
+                    <ul class="dropdown-menu">
+                      {{ range .Children }}
+                      <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                      {{ end }}
+                    </ul>
+                  </li>
+                
+                  {{ else }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                  {{ end }}
+                {{ end }}
+                
+              
+                <li>
+                  <select id="select-language" onchange="location=this.value;">
+                    <option id="en" value="http://demo.themefisher.com/airspace-hugo/en/" selected="">En</option>
+                    <option id="fr" value="http://demo.themefisher.com/airspace-hugo/fr/">Fr</option>
+                  </select>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+{{- if .Site.IsServer -}} {{ "<!-- Layout: End partial/header.html -->" |safeHTML }} {{- end -}}

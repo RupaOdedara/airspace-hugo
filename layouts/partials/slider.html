@@ -1,0 +1,16 @@
+{{- if .Site.IsServer -}} {{ "<!-- Layout: partial/slider.html -->" |safeHTML }} {{- end -}}
+  <section class="slider" style="background-image:url('{{ .Params.header_img }}')">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="block">
+            <h1>{{ .Params.slider_title | safeHTML }}</h1>
+            <p>{{ .Params.Description }}</p>
+            <a href="/airspace-hugo/en/project" target="_blank" class="btn btn-main animated fadeInUp">Discover Our Project</a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{- if .Site.IsServer -}} {{ "<!-- Layout: End partial/slider.html -->" |safeHTML }} {{- end -}}
