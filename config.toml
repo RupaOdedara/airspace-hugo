@@ -1,0 +1,46 @@
+baseurl = "/"
+languageCode = "en"
+contentDir = "content"
+title = "Airspace"
+#Hugo version = 0.55.6
+#Hugo_version_link = "https://github.com/gohugoio/hugo/releases/tag/v0.55.6/"
+Paginate = 3
+
+[Params]
+  description = ""
+  subtitle = ""
+  logo = "/img/solais-logo.svg"
+
+ copyright= "Copyright @ Solais Geoinformatics Pty Ltd | Developed by"
+
+[blackFriday]
+  hrefTargetBlank = true
+
+[taxonomies]
+  author = "authors"
+  tags = "tags"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "pages"
+    name = "pages"
+    url = "/pages/"
+    weight = "200"
+  
+ 
+
+ 
+
+  #footer
+
+  [[menu.footer]]
+    name = "Privacy Policy4"
+    url = "/privacy/"
+    weight = "100"
+    
+  [[menu.footer]]
+    name = "Legal Notice"
+    url = "/legal/"
+    weight = "200"
+
