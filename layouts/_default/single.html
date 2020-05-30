@@ -1,8 +1,35 @@
 {{ define "main" }}
-  {{- if .Site.IsServer -}} {{ "<!-- Layout: _default/single.html -->" |safeHTML }} {{- end -}}
-   
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: blog/single.html -->" |safeHTML }} {{- end -}}
+    
     {{ partial "page-title.html" . }}
-    <h1>defualt</h1>
 
-  {{- if .Site.IsServer -}} {{ "<!-- Layout: End _default/single.html -->" |safeHTML }} {{- end -}}
+    <section class="page-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post post-single">
+              <h2 class="post-title">{{ .Title }}</h2>
+              <div class="post-meta">
+                <ul>
+                  <li><i class="ion-calendar"></i>{{ .PublishDate.Format "January 2, 2006" }}</li>
+                  <li><i class="ion-android-people"></i>Posted By <a class="text-primary" href="/airspace-hugo/en/author/mark-dinn">{{ .Params.author }}</a></li>
+                  <li><i class="ion-pricetags"></i><a href="/airspace-hugo/en/tags/advice">Advice</a>
+                    , <a href="/airspace-hugo/en/tags/ai">A i</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="post-thumb"><img class="img-responsive" src="{{ .Params.image }}" alt="{{ .Title }}"></div>
+              <div class="post-content post-excerpt">
+              {{ .Content }}
+              </div>
+              <div class="post-comments"></div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            {{ partial "blog-side-bar.html" . }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: End blog/single.html -->" |safeHTML }} {{- end -}}
 {{ end }}

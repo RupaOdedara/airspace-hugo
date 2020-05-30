@@ -1,8 +1,69 @@
 {{ define "main" }}
-  {{- if .Site.IsServer -}} {{ "<!-- Layout: _default/list.html -->" |safeHTML }} {{- end -}}
-    
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: blog/list.html -->" |safeHTML }} {{- end -}}
+     
+   
     {{ partial "page-title.html" . }}
-    <h1>defualt</h1>
+    <div class="page-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            {{ $paginator := .Paginate .Data.Pages }}
+            {{ range $paginator.Pages }}
+            <div class="post">
+              <div class="post-media post-thumb"><a href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a></div>
+              <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              <div class="post-meta">
+                <ul>
+                  <li><i class="ion-calendar"></i>{{ .PublishDate.Format "January 2, 2006" }}</li>
+                  <li><i class="ion-android-people"></i>Posted By <a class="text-primary" href="{{ .RelPermalink }}">{{ .Params.author }}</a></li>
+                  <li><i class="ion-pricetags"></i><a href="/airspace-hugo/en/tags/advice">Advice</a>
+                    , <a href="/airspace-hugo/en/tags/technology">Technology</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="post-content">
+                <p>{{ .Summary }}</p>
+                <a href="{{ .RelPermalink }}" class="btn btn-main">{{ .Params.continue_btn }}</a>
+              </div>
+            </div>
+         {{ end }}
+            <!-- <nav class="text-center">
+              {{ if gt .Paginator.TotalPages 1}}
+              <ul class="pagination post-pagination">
 
-  {{- if .Site.IsServer -}} {{ "<!-- Layout: End _default/list.html -->" |safeHTML }} {{- end -}}
+                {{ with $paginator.First }}
+                  <li class="active"><a href="{{ .URL }}">1</a></li>
+                {{ end }}
+                {{ if .Paginator.HasPrev }}
+                <li><a href="{{ .Paginator.Prev.URL }}" class="page-link">Prev</a></li>
+                {{ end }}
+
+                {{ range .Paginator.Pagers }}
+                {{ if eq .PageNumber $paginator.PageNumber }}
+                 <li><a href="/airspace-hugo/en/blog/page/2/">{{ .PageNumber }}</a></li>
+                {{ end }}
+                {{ else }}
+
+                {{ end }}
+
+                {{ if $paginator.HasNext }}
+                <li>
+                  <a href="{{ $paginator.Next.URL }}">>Next</a>
+                </li>
+                {{ end }}
+                
+               
+               
+              </ul>
+              {{ end }}
+            </nav> -->
+          </div>
+          <div class="col-md-4">
+            {{ partial "blog-side-bar.html" . }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: End blog/list.html -->" |safeHTML }} {{- end -}}
 {{ end }}

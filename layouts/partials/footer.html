@@ -5,16 +5,17 @@
         <div class="col-md-12">
           <div class="footer-manu">
             <ul>
-              {{ range .Site.Menus.main }}
-                <li><a href="about">{{ .Name }}</a></li>
+              {{ range .Site.Menus.footer }}
+                <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
               {{ end }}
-            
             
             </ul>
           </div>
-          <p class="copyright">Copyright © 2019 <a href="https://themefisher.com">Themefisher</a> All Rights Reserved</p>
+          <p class="copyright">{{ .Site.Params.copyright }} <a href="https://themefisher.com">Themefisher</a>  {{ .Site.Params.copyrightvar }} </p>
         </div>
       </div>
     </div>
   </footer>
+
+
 {{- if .Site.IsServer -}} {{ "<!-- Layout: End partial/footer.html -->" |safeHTML }} {{- end -}}

@@ -1,0 +1,8 @@
+{{ define "main" }}
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: project/list.html -->" |safeHTML }} {{- end -}}
+     
+   
+    {{ partial "page-title.html" . }}
+  <h1>project</h1>
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: End project/list.html -->" |safeHTML }} {{- end -}}
+{{ end }}

@@ -1,13 +1,37 @@
 {{- if .Site.IsServer -}} {{ "<!-- Layout: partial/script.html -->" |safeHTML }} {{- end -}}
 
-<script async="" src="//www.google-analytics.com/analytics.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&amp;libraries=places"></script>
+
 <script src="/plugins/jQuery/jquery.min.js"></script>
 <script src="/plugins/bootstrap/bootstrap.min.js"></script>
 <script src="/plugins/slick/slick.min.js"></script>
 <script src="/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
 <script src="/plugins/shuffle/shuffle.min.js"></script>
 <script src="/plugins/google-map/gmap.js"></script>
-<script src="/js/script.js"></script>
+
+<!-- Main Script -->
+{{ $script := resources.Get "js/script.js" | minify}}
+<script src="{{ $script.Permalink }}"></script>
+
+
+
+  <!-- Google Map API -->
+  {{ if .Site.Params.gmap.enable }}
+  <script src="{{ .Site.Params.gmap.gmap_api | safeURL }}"></script>
+  {{ end }}
+  
+  
+  
+  <!-- google analitycs -->
+  {{ with .Site.Params.google_analitycs_id }}
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{{ . }}', 'auto');
+    ga('send', 'pageview');
+  </script>
+  {{ end }}
+  
 
 {{- if .Site.IsServer -}} {{ "<!-- Layout: End partial/script.html -->" |safeHTML }} {{- end -}}

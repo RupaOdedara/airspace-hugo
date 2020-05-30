@@ -1,0 +1,35 @@
+{{ define "main" }}
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: Pricing/list.html -->" |safeHTML }} {{- end -}}
+     
+   
+    {{ partial "page-title.html" . }}
+
+    <section class="pricing-table section bg-gray">
+      <div class="container">
+        <div class="row">
+          {{ range .Params.pricing_table }}
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="pricing-item text-center">
+              <div class="price-title">
+                <h3>{{ .name }}</h3>
+                <strong class="value">{{ .price }}</strong>
+                <p>{{ .description }}</p>
+              </div>
+              <ul>
+                {{ range .feature }}
+                <li>{{ . }}</li>
+               
+                {{ end }}
+              </ul>
+              <a class="btn btn-small" href="#">Buy Now</a>
+            </div>
+          </div>
+         {{ end }}
+        </div>
+      </div>
+    </section>
+
+    {{ partial "cta.html" . }}
+
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: End Pricing/list.html -->" |safeHTML }} {{- end -}}
+{{ end }}

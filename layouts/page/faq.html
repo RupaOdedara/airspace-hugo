@@ -1,6 +1,0 @@
-{{ define "main" }}
-  {{- if .Site.IsServer -}} {{ "<!-- Layout: page/FAQ.html -->" |safeHTML }} {{- end -}}
-
-    {{ partial "page-title.html" . }}
-  {{- if .Site.IsServer -}} {{ "<!-- Layout: End page/FAQ.html -->" |safeHTML }} {{- end -}}
-{{ end }}

@@ -1,0 +1,39 @@
+{{- if .Site.IsServer -}} {{ "<!-- Layout: partial/blog-side-bar.html -->" |safeHTML }} {{- end -}}
+  <aside class="sidebar">
+  <div class="widget widget-latest-post">
+    <h4 class="widget-title">Latest Posts</h4>
+    {{ range first 4 (where .Site.Pages "Type" "post") }}
+    <div class="media">
+      <a class="pull-left" href="{{ .Permalink }}"><img class="media-object" src="{{ .Params.image }}" alt="{{ .Title }}"></a>
+      <div class="media-body">
+        <h4 class="media-heading"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+        <p>{{ .Summary | truncate 50 }}</p>
+      </div>
+    </div>
+    {{ end }}
+    
+    
+  </div>
+  <div class="widget widget-category">
+    <h4 class="widget-title">Categories</h4>
+    <ul class="widget-category-list">
+      <li><a href="/airspace-hugo/en/categories/artificial-intelligence">Artificial intelligence</a></li>
+      <li><a href="/airspace-hugo/en/categories/company-news">Company news</a></li>
+      <li><a href="/airspace-hugo/en/categories/legacy-support">Legacy support</a></li>
+    </ul>
+  </div>
+  <div class="widget widget-tag">
+    <h4 class="widget-title">Tags</h4>
+    <ul class="widget-tag-list">
+      <li><a href="/airspace-hugo/en/tags/advice">Advice</a></li>
+      <li><a href="/airspace-hugo/en/tags/ai">Ai</a></li>
+      <li><a href="/airspace-hugo/en/tags/android">Android</a></li>
+      <li><a href="/airspace-hugo/en/tags/company">Company</a></li>
+      <li><a href="/airspace-hugo/en/tags/mechine">Mechine</a></li>
+      <li><a href="/airspace-hugo/en/tags/news">News</a></li>
+      <li><a href="/airspace-hugo/en/tags/retro">Retro</a></li>
+      <li><a href="/airspace-hugo/en/tags/technology">Technology</a></li>
+    </ul>
+  </div>
+  </aside>
+{{- if .Site.IsServer -}} {{ "<!-- Layout: partial/blog-side-bar.html -->" |safeHTML }} {{- end -}}

@@ -1,0 +1,24 @@
+{{ define "main" }}
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: faq/list.html -->" |safeHTML }} {{- end -}}
+    {{ partial "page-title.html" . }}
+
+    <section class="page-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>{{ .Params.title }}</h2>
+            <p>{{ .Params.subtitle }}</p>
+            <p>Last updated: {{ dateFormat "January 2, 2006" .Params.date }}</p>
+          
+            <p>Phone:<a href="tel:{{ .Site.Params.mobile }}">{{ .Site.Params.mobile }}</a></p>
+            <p>Email:<a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</p>    
+            <p>{{ .Site.Params.location }}</p>
+          </div>
+          <div class="col-md-8">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: faq/list.html -->" |safeHTML }} {{- end -}}
+{{ end }}
