@@ -6,41 +6,152 @@ title = "Airspace"
 #Hugo_version_link = "https://github.com/gohugoio/hugo/releases/tag/v0.55.6/"
 Paginate = 3
 
+
+
+[Params.logo]
+  logo = "/images/logo.png"
+
+# Contact Information
 [Params]
-  description = ""
-  subtitle = ""
-  logo = "/img/solais-logo.svg"
+  mobile = "0124857985320"
+  email = "demo@email.com"
+  location = "North Main Street,Brooklyn Australia"
 
- copyright= "Copyright @ Solais Geoinformatics Pty Ltd | Developed by"
+ copyright= "Copyright @ 2019"
+ copyrightvar= "All Rights Reserved"
 
-[blackFriday]
-  hrefTargetBlank = true
+[[params.social]]
+icon = "ion-social-googleplus-outline" #ionicon pack v2 : https://ionicons.com/v2/
+link = "#"
 
-[taxonomies]
-  author = "authors"
-  tags = "tags"
+[[params.social]]
+icon = "ion-social-linkedin-outline" #ionicon pack v2 : https://ionicons.com/v2/
+link = "#"
 
-[menu]
+[[params.social]]
+icon = "ion-social-pinterest-outline" #ionicon pack v2 : https://ionicons.com/v2/
+link = "#"
+
+[[params.social]]
+icon = "ion-social-dribbble-outline" #ionicon pack v2 : https://ionicons.com/v2/
+link = "#"
+
+[[params.social]]
+icon = "ion-social-twitter-outline" #ionicon pack v2 : https://ionicons.com/v2/
+link = "#"
+
+[[params.social]]
+icon = "ion-social-facebook-outline" #ionicon pack v2 : https://ionicons.com/v2/
+link = "#"
+
+
+
+
+[[menu.main]]
+name = "Home"
+URL = "/"
+weight = 1
+
+
+[[menu.main]]
+name = "About"
+URL = "/about/"
+weight = 2
+
+[[menu.main]]
+name = "Project"
+URL = "/project/"
+weight = 3
+
+[[menu.main]]
+name = "Service"
+URL = "/service/"
+weight = 4
+
+[[menu.main]]
+name = "Blog"
+URL = "/blog/"
+weight = 5
+
+[[menu.main]]
+weight = 6
+name = "Pages"
+hasChildren = true
 
   [[menu.main]]
-    identifier = "pages"
-    name = "pages"
-    url = "/pages/"
-    weight = "200"
+  parent = "Pages"
+  name = "FAQ"
+  URL = "/faq/"
+
+  [[menu.main]]
+  parent = "Pages"
+  name = "Pricing"
+  URL = "/pricing/"
+  
+[[menu.main]]
+name = "Contact"
+URL = "/contact/"
+weight = 7
+
+
   
  
 
- 
 
-  #footer
+# footer menu
+[[menu.footer]]
+name = "About"
+URL = "about"
+weight = 1
 
-  [[menu.footer]]
-    name = "Privacy Policy4"
-    url = "/privacy/"
-    weight = "100"
-    
-  [[menu.footer]]
-    name = "Legal Notice"
-    url = "/legal/"
-    weight = "200"
+[[menu.footer]]
+name = "Project"
+URL = "project"
+weight = 2
 
+[[menu.footer]]
+name = "Service"
+URL = "service"
+weight = 3
+
+[[menu.footer]]
+name = "Pricing"
+URL = "pricing"
+weight = 4
+
+[[menu.footer]]
+name = "FAQ"
+URL = "faq"
+weight = 5
+
+[[menu.footer]]
+name = "Contact"
+URL = "contact"
+weight = 6
+
+
+
+
+# google map
+[params.gmap]
+enable = true
+gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"
+map_latitude = "51.5223477"
+map_longitude = "-0.1622023"
+map_marker = "images/marker.png"
+
+
+
+
+
+
+
+# Preloader
+[params.preloader]
+enable = true
+preloader = "" # use .png , .svg or .gif format
+
+# Google Analitycs
+google_analitycs_id = "" # Your ID# search
+# multi-author support (if set to true, you must use an Array in the author field)
+multi_author = false
