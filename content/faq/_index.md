@@ -1,18 +1,31 @@
 ---
 title: "Frequently Asked Questions"
-Bg_image: "/images/featue-bg.jpg"
 description: "this is meta description"
-menu:
-  main:
-    parent: pages
-    name: FAQ
-    weight: 610
-layout: faq
+subtitle : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, repudiandae."
+date: 2019-12-23T13:05:29+06:00
+contact:
+  - name: "Phone:"
+    url: "tel:0124857985320"
+    value: "0124857985320"
+  - name: "Email:"
+    url: "mailto:demo@email.com"
+    value: "demo@email.com"
+
+location: "Location: North Main Street,Brooklyn Australia"
+draft: false
+bg_image: "/images/featue-bg.jpg"
 ---
 
-
 ### Welcome to Airspace!
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ullam sint quas pariatur ipsam nemo repellendus suscipit quod accusantium numquam tempora assumenda sequi, velit voluptatem soluta voluptatibus nesciunt ducimus iure. Excepturi voluptatum ullam tenetur perspiciatis alias delectus beatae voluptatibus magni facere aspernatur, qui, quas nesciunt blanditiis assumenda a expedita accusantium quos consectetur neque nemo. Necessitatibus est quod quo deserunt, dicta aut voluptatem blanditiis, alias quos sed vel unde enim dolore aliquam quis reiciendis qui vitae reprehenderit. Similique nemo accusamus, vel possimus error cumque quas, tempora repellendus velit, unde cupiditate impedit deserunt fugit labore et nostrum sapiente est obcaecati maiores voluptates.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ullam sint quas pariatur ipsam nemo
+repellendus suscipit quod accusantium numquam tempora assumenda sequi, velit voluptatem soluta voluptatibus
+nesciunt ducimus iure. Excepturi voluptatum ullam tenetur perspiciatis alias delectus beatae voluptatibus
+magni facere aspernatur, qui, quas nesciunt blanditiis assumenda a expedita accusantium quos consectetur neque
+nemo. Necessitatibus est quod quo deserunt, dicta aut voluptatem blanditiis, alias quos sed vel unde enim
+dolore aliquam quis reiciendis qui vitae reprehenderit. Similique nemo accusamus, vel possimus error cumque
+quas, tempora repellendus velit, unde cupiditate impedit deserunt fugit labore et nostrum sapiente est
+obcaecati maiores voluptates.
 
 #### 1.Overview
 
@@ -20,17 +33,20 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas iusto, alias,
 neque excepturi aliquid. Eligendi, mollitia.
 
 #### 2. Data We Collect
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, earum, quibusdam? Accusantium, eaque at
 quasi dicta quis consectetur. Temporibus, natus illo quasi, magni neque fugiat ducimus omnis, ab ullam
 reprehenderit obcaecati. Inventore ut nisi repellendus dolores odit. Ea molestias perspiciatis enim, tenetur
 impedit suscipit quidem optio asperiores quibusdam. Minus, vel.
 
 #### 3. How We Use Data
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus repellat id, laboriosam ipsa
 repudiandae quisquam, suscipit officiis, praesentium itaque facilis distinctio dolorum. Velit reiciendis
 libero laudantium corporis, delectus impedit sunt.
 
 #### 4. How We Disclose Data.
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur itaque ut culpa totam ratione! Iste
 possimus beatae consequuntur, fugit iusto fugiat id, dignissimos culpa obcaecati voluptatum omnis est
 quibusdam quos, et illo rerum quae dolorem error quis suscipit asperiores facilis? Ratione, facere architecto
@@ -41,12 +57,15 @@ Voluptatem impedit, maiores, cupiditate, iure possimus neque quaerat natus aut m
 magnam, vero itaque!
 
 #### 5. Security
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis quod saepe, inventore ipsum sint
 cum iste quae ratione nobis laborum minima autem totam similique, quia neque deleniti! Provident, suscipit.
 
 #### 6. Advertising.
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, eaque repellendus placeat aperiam fugit.
 Quod inventore quis quos, molestias nostrum tempora quae adipisci dolorem ipsam repellendus officia,
 voluptatem assumenda porro possimus, eius eum enim qui natus! Quas numquam voluptas reiciendis eveniet ab at
 provident omnis mollitia ipsa. Asperiores vero rem cum minima voluptas, vitae magni accusantium quae. Sed,
 expedita, ad.
+  
