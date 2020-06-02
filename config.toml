@@ -4,7 +4,8 @@ contentDir = "content"
 title = "Airspace"
 #Hugo version = 0.55.6
 #Hugo_version_link = "https://github.com/gohugoio/hugo/releases/tag/v0.55.6/"
-Paginate = 3
+multi_author = false
+Paginate = 2
 
 
 
@@ -19,30 +20,10 @@ Paginate = 3
 
  copyright= "Copyright @ 2019"
  copyrightvar= "All Rights Reserved"
-
-[[params.social]]
-icon = "ion-social-googleplus-outline" #ionicon pack v2 : https://ionicons.com/v2/
-link = "#"
-
-[[params.social]]
-icon = "ion-social-linkedin-outline" #ionicon pack v2 : https://ionicons.com/v2/
-link = "#"
-
-[[params.social]]
-icon = "ion-social-pinterest-outline" #ionicon pack v2 : https://ionicons.com/v2/
-link = "#"
-
-[[params.social]]
-icon = "ion-social-dribbble-outline" #ionicon pack v2 : https://ionicons.com/v2/
-link = "#"
-
-[[params.social]]
-icon = "ion-social-twitter-outline" #ionicon pack v2 : https://ionicons.com/v2/
-link = "#"
-
-[[params.social]]
-icon = "ion-social-facebook-outline" #ionicon pack v2 : https://ionicons.com/v2/
-link = "#"
+ ctatitle = "We design delightful digital experiences."
+ ctadescription = "Read more about what we do and our philosophy of design. Judge for yourself The work and results we’ve achieved for other clients, and meet our highly experienced Team who just love to design."
+ ctaname = "Tell Us Your Story"
+ ctaurl = "/contact/"
 
 
 
@@ -155,3 +136,5 @@ preloader = "" # use .png , .svg or .gif format
 google_analitycs_id = "" # Your ID# search
 # multi-author support (if set to true, you must use an Array in the author field)
 multi_author = false
+
+
