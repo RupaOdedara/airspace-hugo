@@ -1,23 +1,24 @@
 {{- if .Site.IsServer -}} {{ "<!-- Layout: partial/service.html -->" |safeHTML }} {{- end -}}
-  <section class="service">
-    <div class="container">
-      <div class="row">
-        <div class="section-title">
-          <h2>{{ .Params.service_title }}</h2>
-          <p>{{ .Params.service_description }}</p>
-        </div>
-      </div>
-      <div class="row">
-        {{ range .Params.service_item }}
-          <div class="col-sm-6 col-md-3">
-            <div class="service-item">
-              <i class="{{ .icon }}"></i>
-              <h4>{{ .name }}</h4>
-              <p>{{ .description }}</p>
+     
+    <section class="service">
+        <div class="container">
+          <div class="row">
+            <div class="section-title">
+              <h2>{{ .Params.service_title }}</h2>
+              <p>{{ .Params.service_description }}</p>
             </div>
           </div>
-        {{ end }}
-      </div>
-    </div>
-  </section>
+          <div class="row">
+            {{ range .Params.service_item }}
+              <div class="col-sm-6 col-md-3">
+                <div class="service-item">
+                  <i class="{{ .icon }}"></i>
+                  <h4>{{ .name }}</h4>
+                  <p>{{ .description }}</p>
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+    </section>
 {{- if .Site.IsServer -}} {{ "<!-- Layout: End partial/service.html -->" |safeHTML }} {{- end -}}
