@@ -1,9 +1,11 @@
-baseurl = "/"
-languageCode = "en"
+baseURL = "https://examplesite.com"
+title = "Airspace | Creative Agency Hugo Template"
 contentDir = "content"
-title = "Airspace"
 #Hugo version = 0.55.6
+summaryLength = "30"
 #Hugo_version_link = "https://github.com/gohugoio/hugo/releases/tag/v0.55.6/"
+# disable language
+disableLanguages = []
 multi_author = false
 Paginate = 2
 
@@ -18,8 +20,7 @@ Paginate = 2
   email = "demo@email.com"
   location = "North Main Street,Brooklyn Australia"
 
- copyright= "Copyright @ 2019"
- copyrightvar= "All Rights Reserved"
+ copyright = "Copyright &copy; 2020 [Themefisher](https://themefisher.com) All Rights Reserved"
  ctatitle = "We design delightful digital experiences."
  ctadescription = "Read more about what we do and our philosophy of design. Judge for yourself The work and results we’ve achieved for other clients, and meet our highly experienced Team who just love to design."
  ctaname = "Tell Us Your Story"
