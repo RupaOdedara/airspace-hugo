@@ -1,6 +1,6 @@
 {{- if .Site.IsServer -}} {{ "<!-- Layout: _default/baseof.html -->" |safeHTML }} {{- end -}}
   <!DOCTYPE html>
-  <html lang="en">
+  <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
     {{ partial "head.html" . }}
     <body>
       {{ partial "preloader.html" . }}
@@ -8,7 +8,6 @@
       {{ block "main" . }}
       {{ end }}
       {{ partial "footer.html" . }}
-      
       {{ partial "script.html" . }}
     </body>
   </html>

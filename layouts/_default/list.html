@@ -1,93 +1,121 @@
 {{ define "main" }}
   {{- if .Site.IsServer -}} {{ "<!-- Layout: blog/list.html -->" |safeHTML }} {{- end -}}
-     
-   
-    {{ partial "page-title.html" . }}
-    <div class="page-wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            {{ $paginator := .Paginate .Data.Pages }}
-            {{ range $paginator.Pages }}
-            <div class="post">
-              <div class="post-media post-thumb"><a href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a></div>
-              <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-              <div class="post-meta">
-                <ul>
-                  <li><i class="ion-calendar"></i>{{ .PublishDate.Format "January 2, 2006" }}</li>
-                  
-                  <li><i class="ion-android-people"></i>Posted By <a class="text-primary" href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}">{{ .Params.author }}</a></li>
-                  <li><i class="ion-pricetags"></i> 
-                    {{ range .Params.tags }}
-                      <a href="/tags/{{ . | urlize }}">{{ . }},</a>
-                    {{ end }}
-                  </li>
-                </ul>
-              </div>
-              <div class="post-content">
-                <p>{{ .Summary }}</p>
-                <a href="{{ .RelPermalink }}" class="btn btn-main">{{ .Params.continue_btn }}</a>
-              </div>
-            </div>
-         {{ end }}
-            <nav class="text-center">
-              {{ if gt .Paginator.TotalPages 1}}
-              <ul class="pagination post-pagination">
-
-                {{ if .Paginator.HasPrev }}
-                <li><a href="{{ .Paginator.Prev.URL }}" class="page-link">Prev</a></li>
-                {{ end }}
-    
-                {{ range .Paginator.Pagers }}
-                {{ if eq .PageNumber $paginator.PageNumber }}
-                 <li class="{{ if eq . $paginator }} active {{ end }}"><a href="{{ .URL }}">{{ .PageNumber }}</a></li>
-                {{ end }}
-               
-                {{ end }}
-
-                {{ if $paginator.HasNext }}
-                <li>
-                  <a href="{{ $paginator.Next.URL }}">Next</a>
-                </li>
-                {{ end }}
-                
-            
-              </ul>
+      {{ partial "page-title.html" . }}
+      <div class="page-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              {{ $paginator := .Paginate .Data.Pages }}
+              {{ range $paginator.Pages }}
+                <div class="post">
+                  <div class="post-media post-thumb"><a href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a></div>
+                  <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                  <div class="post-meta">
+                    <ul>
+                      <li><i class="ion-calendar"></i>{{ .PublishDate.Format "January 2, 2006" }}</li>
+                      <li><i class="ion-android-people"></i>Posted By <a class="text-primary" href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}">{{ .Params.author }}</a></li>
+                      <li><i class="ion-pricetags"></i> 
+                        {{ range .Params.tags }}
+                          <a href="/tags/{{ . | urlize }}">{{ . }},</a>
+                        {{ end }}
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="post-content">
+                    <p>{{ .Summary }}</p>
+                    <a href="{{ .RelPermalink }}" class="btn btn-main">{{ .Params.continue_btn }}</a>
+                  </div>
+                </div>
               {{ end }}
-            </nav> 
+              {{ $paginator := .Paginator }}
+              {{ $adjacent_links := 2 }}
+              {{ $max_links := (add (mul $adjacent_links 2) 1) }}
+              {{ $lower_limit := (add $adjacent_links 1) }}
+              {{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}
+              {{ if gt $paginator.TotalPages 1 }}
+              <nav class="text-center">
+                <ul class="pagination post-pagination">
+                  <!-- Previous page. -->
+                  {{ if $paginator.HasPrev }}
+                  <li>
+                    <a href="{{ $paginator.Prev.URL }}" class="page-link">Prev</a>
+                  </li>
+                  {{ end }}
+                  <!-- Page numbers. -->
+                  {{ range $paginator.Pagers }}
+                  {{ $.Scratch.Set "page_number_flag" false }}
+                  <!-- Advanced page numbers. -->
+                  {{ if gt $paginator.TotalPages $max_links }}
+                  <!-- Lower limit pages. -->
+                  <!-- If the user is on a page which is in the lower limit.  -->
+                  {{ if le $paginator.PageNumber $lower_limit }}
+                  <!-- If the current loop page is less than max_links. -->
+                  {{ if le .PageNumber $max_links }}
+                  {{ $.Scratch.Set "page_number_flag" true }}
+                  {{ end }}
+                  <!-- Upper limit pages. -->
+                  <!-- If the user is on a page which is in the upper limit. -->
+                  {{ else if ge $paginator.PageNumber $upper_limit }}
+                  <!-- If the current loop page is greater than total pages minus $max_links -->
+                  {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) }}
+                  {{ $.Scratch.Set "page_number_flag" true }}
+                  {{ end }}
+                  <!-- Middle pages. -->
+                  {{ else }}
+                  {{ if and ( ge .PageNumber (sub $paginator.PageNumber $adjacent_links) ) ( le .PageNumber (add $paginator.PageNumber $adjacent_links) ) }}
+                  {{ $.Scratch.Set "page_number_flag" true }}
+                  {{ end }}
+                  {{ end }}
+                  <!-- Simple page numbers. -->
+                  {{ else }}
+                  {{ $.Scratch.Set "page_number_flag" true }}
+                  {{ end }}
+                  <!-- Output page numbers. -->
+                  {{ if eq ($.Scratch.Get "page_number_flag") true }}
+                  <li class="{{ if eq . $paginator }} active {{ end }}">
+                    <a href="{{ .URL }}">
+                    {{ .PageNumber }}
+                    </a>
+                  </li>
+                  {{ end }}
+                  {{ end }}
+                  <!-- Next page. -->
+                  {{ if $paginator.HasNext }}
+                  <li>
+                    <a href="{{ $paginator.Next.URL }}">Next</a>
+                  </li>
+                  {{ end }}
+                </ul>
+              </nav>
+              {{ end }}
+            </div>
+            <div class="col-md-4">
+              <aside class="sidebar">
+                {{ partial "blog-side-bar.html" . }}
+                <div class="widget widget-category">
+                  <h4 class="widget-title">Categories</h4>
+                  <ul class="widget-category-list unique">
+                    {{ range .Pages }} 
+                      {{ range .Params.categories }}
+                        <li><a href="/categories/{{ . | urlize }}">{{ . }}</a></li>
+                      {{ end }}
+                    {{ end }}
+                  </ul>
+                </div>
+                <div class="widget widget-tag">
+                  <h4 class="widget-title">Tags</h4>
+                  <ul class="widget-tag-list unique">
+                    {{ range .Pages }} 
+                      {{ range .Params.tags }}
+                        <li><a href="/tags/{{ . | urlize }}">{{ . }}</a></li>
+                      {{ end }}
+                    {{ end }}
+                  </ul>
+                </div>
+              </aside>
+            </div>
           </div>
-          <div class="col-md-4">
-
-            <aside class="sidebar">
-              {{ partial "blog-side-bar.html" . }}
-              <div class="widget widget-category">
-                <h4 class="widget-title">Categories</h4>
-                <ul class="widget-category-list unique">
-                  {{ range .Pages }} 
-                    {{ range .Params.categories }}
-                    <li><a href="/categories/{{ . | urlize }}">{{ . }}</a></li>
-                    {{ end }}
-                  {{ end }}
-                </ul>
-              </div>
-              <div class="widget widget-tag">
-                <h4 class="widget-title">Tags</h4>
-                <ul class="widget-tag-list unique">
-                 
-                  {{ range .Pages }} 
-                    {{ range .Params.tags }}
-                      <li><a href="/tags/{{ . | urlize }}">{{ . }}</a></li>
-                    {{ end }}
-                  {{ end }}
-                 
-                </ul>
-              </div>
-            </aside>
-           
-          </div> 
         </div>
       </div>
-    </div>
-
   {{- if .Site.IsServer -}} {{ "<!-- Layout: End blog/list.html -->" |safeHTML }} {{- end -}}
-{{ end }}
+  {{ end }}

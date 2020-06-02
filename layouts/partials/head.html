@@ -20,10 +20,14 @@
   <link rel="stylesheet" href="{{ $styles.Permalink }}" type="text/css">
 
   
-  <link rel="shortcut icon" href="http://demo.themefisher.com/airspace-hugo/images/favicon.png" type="image/x-icon">
-  <link rel="icon" href="/asse" type="image/x-icon">
-  <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/41/2/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/41/2/util.js"></script>
-</head>
+  
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+  
+  <link rel="manifest" href="/images/manifest.json">
 
+</head>
 
 {{- if .Site.IsServer -}} {{ "<!-- Layout: End partial/head.html -->" |safeHTML }} {{- end -}}

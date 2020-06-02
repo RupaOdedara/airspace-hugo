@@ -1,6 +1,5 @@
 {{ define "main" }}
   {{- if .Site.IsServer -}} {{ "<!-- Layout: blog/single.html -->" |safeHTML }} {{- end -}}
-    
     {{ partial "page-title.html" . }}
 
     <section class="page-wrapper">
