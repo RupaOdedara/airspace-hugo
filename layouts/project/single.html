@@ -1,0 +1,33 @@
+                
+{{ define "main" }}
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: project/single.html -->" |safeHTML }} {{- end -}}
+    
+  <section class="portfolio-single-page section-sm">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8"><img class="img-responsive w-100" src="{{ .Params.image }}" alt=""></div>
+        <div class="col-md-4">
+          <div class="project-details">
+            <h4>Project Details</h4>
+            <ul>
+              <li><span>Client :</span> <strong>{{ .Params.client }}</strong></li>
+              <li><span>What We Did :</span> <strong>{{ .Params.assign_work }}</strong></li>
+              <li><span>Tools Used :</span> <strong>{{range .Params.tools }}{{ . }},{{ end }}</strong></li>
+              <li><span>Completed on :</span> <strong>{{ dateFormat "17 January 2006" .Params.date }}</strong></li>
+              <li><span>Skills :</span> <strong>{{ .Params.skils }}</strong></li>
+              <li><span>Client :</span> <strong>{{ .Params.client }}</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="project-content mt-50">
+           {{ .Content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: End project/single.html -->" |safeHTML }} {{- end -}}
+{{ end }}

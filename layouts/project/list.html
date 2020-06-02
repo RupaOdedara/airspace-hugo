@@ -3,6 +3,36 @@
      
    
     {{ partial "page-title.html" . }}
-  <h1>project</h1>
+    <section class="portfolio-work">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block">
+              <div class="portfolio-menu">
+                <div class="btn-group btn-group-toggle justify-content-center" data-toggle="buttons"><label class="btn btn-sm btn-primary active"><input type="radio" name="shuffle-filter" value="all" checked="">All</label>
+                  <label class="btn btn-sm btn-primary"><input type="radio" name="shuffle-filter" value="ui/ux-design">U i/ u x design</label>
+                  <label class="btn btn-sm btn-primary"><input type="radio" name="shuffle-filter" value="illustration">Illustration</label>
+                  <label class="btn btn-sm btn-primary"><input type="radio" name="shuffle-filter" value="video">Video</label>
+                </div>
+              </div>
+              <div class="row shuffle-wrapper shuffle" style="position: relative; overflow: hidden; height: 401.438px; transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;">
+                
+               {{ range .Data.Pages }}
+                <div class="col-md-4 portfolio-item shuffle-item shuffle-item--visible" data-groups="[&quot;{{ .Params.portfolio_title }}&quot;]" style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 1; transform: '{{ .Params.position }}'; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
+                  <img src="{{ .Params.image }}" alt="{{ .Params.title }}">
+                  <div class="portfolio-hover">
+                    <div class="portfolio-content">
+                      <a href="{{ .Params.image }}" class="portfolio-popup"><i class="icon ion-search"></i></a><a class="h3" href="{{ .RelPermalink }}">{{ .Params.title }}</a>
+                      <p>{{ .Params.description }}</p>
+                    </div>
+                  </div>
+                </div>
+              {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   {{- if .Site.IsServer -}} {{ "<!-- Layout: End project/list.html -->" |safeHTML }} {{- end -}}
 {{ end }}
