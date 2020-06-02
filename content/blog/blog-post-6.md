@@ -1,8 +1,8 @@
 ---
-title: "How To Wear Bright Shoes"
+title: "Blog 6"
 date: 2018-09-24T11:07:10+06:00
 author: John Doe
-image : "/images/blog-post-6.jpg"
+image : "/images/blog-post-3.jpg"
 bg_image: "/images/featue-bg.jpg"
 categories: ["Company News"]
 tags: ["News","Retro","AI","Company"]

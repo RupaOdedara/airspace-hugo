@@ -1,6 +1,6 @@
 ---
-title: "How To Wear Bright Shoes"
-date: 2018-09-24T11:07:10+06:00
+title: "Blog 1"
+date: 2019-09-23T11:07:10+06:00
 author: "John Doe"
 image : "/images/blog-post-1.jpg"
 bg_image: "/images/featue-bg.jpg"

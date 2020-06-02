@@ -1,8 +1,8 @@
 ---
-title: "How To Wear Bright Shoes"
+title: "Blog 5"
 date: 2018-09-24T11:07:10+06:00
 author: Mark Dinn
-image : "/images/blog-post-5.jpg"
+image : "/images/blog-post-4.jpg"
 bg_image: "/images/featue-bg.jpg"
 categories: ["Artificial Intelligence"]
 tags: ["Advice","AI"]
@@ -35,7 +35,7 @@ eaque commodi atque aperiam, debitis iste alias eligendi ut facilis earum! Imped
   padding-bottom: 70px;
   border-bottom: 1px solid #efefef;
   }
-```
+``` 
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex error esse a dolore, architecto sapiente, aliquid
 commodi, laudantium eius nemo enim. Enim, fugit voluptatem rem molestiae. Sed totam quis accusantium iste
