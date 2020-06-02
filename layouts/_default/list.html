@@ -15,9 +15,12 @@
               <div class="post-meta">
                 <ul>
                   <li><i class="ion-calendar"></i>{{ .PublishDate.Format "January 2, 2006" }}</li>
-                  <li><i class="ion-android-people"></i>Posted By <a class="text-primary" href="{{ .RelPermalink }}">{{ .Params.author }}</a></li>
-                  <li><i class="ion-pricetags"></i><a href="/airspace-hugo/en/tags/advice">Advice</a>
-                    , <a href="/airspace-hugo/en/tags/technology">Technology</a>
+                  
+                  <li><i class="ion-android-people"></i>Posted By <a class="text-primary" href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}">{{ .Params.author }}</a></li>
+                  <li><i class="ion-pricetags"></i> 
+                    {{ range .Params.tags }}
+                      <a href="/tags/{{ . | urlize }}">{{ . }},</a>
+                    {{ end }}
                   </li>
                 </ul>
               </div>
@@ -27,40 +30,61 @@
               </div>
             </div>
          {{ end }}
-            <!-- <nav class="text-center">
+            <nav class="text-center">
               {{ if gt .Paginator.TotalPages 1}}
               <ul class="pagination post-pagination">
 
-                {{ with $paginator.First }}
-                  <li class="active"><a href="{{ .URL }}">1</a></li>
-                {{ end }}
                 {{ if .Paginator.HasPrev }}
                 <li><a href="{{ .Paginator.Prev.URL }}" class="page-link">Prev</a></li>
                 {{ end }}
-
+    
                 {{ range .Paginator.Pagers }}
                 {{ if eq .PageNumber $paginator.PageNumber }}
-                 <li><a href="/airspace-hugo/en/blog/page/2/">{{ .PageNumber }}</a></li>
+                 <li class="{{ if eq . $paginator }} active {{ end }}"><a href="{{ .URL }}">{{ .PageNumber }}</a></li>
                 {{ end }}
-                {{ else }}
-
+               
                 {{ end }}
 
                 {{ if $paginator.HasNext }}
                 <li>
-                  <a href="{{ $paginator.Next.URL }}">>Next</a>
+                  <a href="{{ $paginator.Next.URL }}">Next</a>
                 </li>
                 {{ end }}
                 
-               
-               
+            
               </ul>
               {{ end }}
-            </nav> -->
+            </nav> 
           </div>
           <div class="col-md-4">
-            {{ partial "blog-side-bar.html" . }}
-          </div>
+
+            <aside class="sidebar">
+              {{ partial "blog-side-bar.html" . }}
+              <div class="widget widget-category">
+                <h4 class="widget-title">Categories</h4>
+                <ul class="widget-category-list unique">
+                  {{ range .Pages }} 
+                    {{ range .Params.categories }}
+                    <li><a href="/categories/{{ . | urlize }}">{{ . }}</a></li>
+                    {{ end }}
+                  {{ end }}
+                </ul>
+              </div>
+              <div class="widget widget-tag">
+                <h4 class="widget-title">Tags</h4>
+                <ul class="widget-tag-list unique">
+                 
+                  {{ range .Pages }} 
+                    {{ range .Params.tags }}
+                      <li><a href="/tags/{{ . | urlize }}">{{ . }}</a></li>
+                    {{ end }}
+                  {{ end }}
+                 
+                </ul>
+              </div>
+            </aside>
+           
+          </div> 
         </div>
       </div>
     </div>

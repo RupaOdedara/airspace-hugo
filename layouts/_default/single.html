@@ -12,9 +12,12 @@
               <div class="post-meta">
                 <ul>
                   <li><i class="ion-calendar"></i>{{ .PublishDate.Format "January 2, 2006" }}</li>
-                  <li><i class="ion-android-people"></i>Posted By <a class="text-primary" href="/airspace-hugo/en/author/mark-dinn">{{ .Params.author }}</a></li>
-                  <li><i class="ion-pricetags"></i><a href="/airspace-hugo/en/tags/advice">Advice</a>
-                    , <a href="/airspace-hugo/en/tags/ai">A i</a>
+                  <li><i class="ion-android-people"></i>Posted By <a class="text-primary" href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}">{{ .Params.author }}</a></li>
+                  <li><i class="ion-pricetags"></i>
+                    {{ range .Params.tags }}
+                    <a href="/tags/{{ . | urlize }}">{{ . }},</a>
+                    {{ end }}
+                    
                   </li>
                 </ul>
               </div>
@@ -26,7 +29,26 @@
             </div>
           </div>
           <div class="col-md-4">
-            {{ partial "blog-side-bar.html" . }}
+            <aside class="sidebar">
+              {{ partial "blog-side-bar.html" . }}
+              <div class="widget widget-category">
+                <h4 class="widget-title">Categories</h4>
+                <ul class="widget-category-list">
+                  {{ range .Params.categories }}
+                  <li><a href="/categories/{{ . | urlize }}">{{ . }}</a></li>
+                 {{ end }}
+                </ul>
+              </div>
+              <div class="widget widget-tag">
+                <h4 class="widget-title">Tags</h4>
+                <ul class="widget-tag-list" id="tag">
+                    {{ range .Params.tags }}
+                      <li><a href="/tags/{{ . | urlize }}">{{ . }}</a></li>
+                    {{ end }}
+                </ul>
+              </div>
+            </aside>
+           
           </div>
         </div>
       </div>

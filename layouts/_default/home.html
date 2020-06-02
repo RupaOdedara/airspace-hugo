@@ -64,66 +64,21 @@
               <div class="testimonial-slider owl-carousel slick-initialized slick-slider">
                 <div class="slick-list draggable">
                   <div class="slick-track" style="opacity: 1; width: 2856px; transform: translate3d(-408px, 0px, 0px);">
-                    <div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 408px;">
+                    {{ range .Params.testimonial_slider }}
+                    <div class="slick-slide {{ .active }}" data-slick-index="{{ .data_slick_index }}" aria-hidden="{{ .aria_hidden }}" tabindex="{{ .tabindex }}" style="width: 408px;">
                       <i class="ion-quote"></i>
-                      <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
+                      <p>"{{ .description }}"</p>
                       <div class="user">
-                        <img src="/airspace-hugo/images/clients/avater-3.jpg" alt="client">
-                        <p><span>Rose Rio</span> CEO-Themefisher</p>
+                        <img src="{{ .image }}" alt="client">
+                        <p><span>{{ .name }}</span>{{ .postition }}</p>
                       </div>
                     </div>
-                    <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0" style="width: 408px;">
-                      <i class="ion-quote"></i>
-                      <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
-                      <div class="user">
-                        <img src="/airspace-hugo/images/clients/avater-1.jpg" alt="client">
-                        <p><span>Raymond Roy</span> CEO-Themefisher</p>
-                      </div>
-                    </div>
-                    <div class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" style="width: 408px;">
-                      <i class="ion-quote"></i>
-                      <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
-                      <div class="user">
-                        <img src="/airspace-hugo/images/clients/avater-1.jpg" alt="client">
-                        <p><span>Randi Renin</span> CEO-Themefisher</p>
-                      </div>
-                    </div>
-                    <div class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" style="width: 408px;">
-                      <i class="ion-quote"></i>
-                      <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
-                      <div class="user">
-                        <img src="/airspace-hugo/images/clients/avater-3.jpg" alt="client">
-                        <p><span>Rose Rio</span> CEO-Themefisher</p>
-                      </div>
-                    </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" tabindex="-1" style="width: 408px;">
-                      <i class="ion-quote"></i>
-                      <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
-                      <div class="user">
-                        <img src="/airspace-hugo/images/clients/avater-1.jpg" alt="client">
-                        <p><span>Raymond Roy</span> CEO-Themefisher</p>
-                      </div>
-                    </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="4" aria-hidden="true" tabindex="-1" style="width: 408px;">
-                      <i class="ion-quote"></i>
-                      <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
-                      <div class="user">
-                        <img src="/airspace-hugo/images/clients/avater-1.jpg" alt="client">
-                        <p><span>Randi Renin</span> CEO-Themefisher</p>
-                      </div>
-                    </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" tabindex="-1" style="width: 408px;">
-                      <i class="ion-quote"></i>
-                      <p>"This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."</p>
-                      <div class="user">
-                        <img src="/airspace-hugo/images/clients/avater-3.jpg" alt="client">
-                        <p><span>Rose Rio</span> CEO-Themefisher</p>
-                      </div>
-                    </div>
+                   {{ end }}
                   </div>
                 </div>
               </div>
             </div>
+           
           </div>
         </div>
       </div>
