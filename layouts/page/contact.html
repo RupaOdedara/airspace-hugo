@@ -32,7 +32,7 @@
                 <li><i class="ion-ios-telephone-outline"></i>Phone: {{ .Site.Params.mobile }}</li>
               </ul>
               <ul class="social-icons">
-                {{ range .Site.Params.social }}
+                {{ range .Params.social }}
                   <li><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>
                 {{ end }}
               </ul>

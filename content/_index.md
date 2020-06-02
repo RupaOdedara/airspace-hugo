@@ -73,9 +73,43 @@ service_item:
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
     icon: "icon ion-earth"
 
-  
-  
-
+testimonial_slider:
+  - name: "Rose Rio"
+    postition: "CEO-Themefisher"
+    description: "This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."
+    image: "/images/avater-3.jpg"
+    aria_hidden: true
+    data_slick_index : -1
+    tabindex: -1
+    active: ""
+    slide: "slick-cloned"
+  - name: "Raymond Roi"
+    postition: "CEO-Themefisher"
+    description: "This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."
+    image: "/images/avater-1.jpg"
+    aria_hidden: true
+    data_slick_index : 0
+    tabindex: -1
+    active: ""
+    slide: ""
+  - name: "Randi Renin"
+    postition: "CEO-Themefisher"
+    description: "This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."
+    image: "/images/avater-1.jpg"
+    aria_hidden: true
+    data_slick_index : 1
+    tabindex: -1
+    active: ""
+    slide: ""
+  - name: "Rose Rio"
+    postition: "CEO-Themefisher"
+    description: "This Company created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make us stand out from the crowd."
+    image: "/images/avater-3.jpg"
+    aria_hidden: false
+    data_slick_index : 2
+    tabindex: 0
+    active: "slick-current slick-active"
+    slide: ""
 ---
 
 
