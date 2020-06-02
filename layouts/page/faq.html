@@ -1,7 +1,7 @@
 {{ define "main" }}
-  {{- if .Site.IsServer -}} {{ "<!-- Layout: faq/list.html -->" |safeHTML }} {{- end -}}
-    {{ partial "page-title.html" . }}
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: page/FAQ.html -->" |safeHTML }} {{- end -}}
 
+    {{ partial "page-title.html" . }}
     <section class="page-wrapper">
       <div class="container">
         <div class="row">
@@ -20,5 +20,5 @@
         </div>
       </div>
     </section>
-  {{- if .Site.IsServer -}} {{ "<!-- Layout: faq/list.html -->" |safeHTML }} {{- end -}}
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: page/FAQ.html -->" |safeHTML }} {{- end -}}
 {{ end }}

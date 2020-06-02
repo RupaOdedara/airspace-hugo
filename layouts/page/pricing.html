@@ -1,6 +1,7 @@
 {{ define "main" }}
-  {{- if .Site.IsServer -}} {{ "<!-- Layout: Pricing/list.html -->" |safeHTML }} {{- end -}}
-     
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: page/pricing.html -->" |safeHTML }} {{- end -}}
+
+    
    
     {{ partial "page-title.html" . }}
 
@@ -31,5 +32,5 @@
 
     {{ partial "cta.html" . }}
 
-  {{- if .Site.IsServer -}} {{ "<!-- Layout: End Pricing/list.html -->" |safeHTML }} {{- end -}}
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: page/pricing.html -->" |safeHTML }} {{- end -}}
 {{ end }}

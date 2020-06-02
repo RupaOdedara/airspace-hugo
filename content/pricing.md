@@ -38,4 +38,5 @@ pricing_table:
       - "Email Marketing"
       - "24/7 Tech Support"
     buy_btn: "Buy Now"
+layout: pricing 
 ---

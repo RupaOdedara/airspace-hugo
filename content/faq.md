@@ -10,11 +10,14 @@ contact:
   - name: "Email:"
     url: "mailto:demo@email.com"
     value: "demo@email.com"
-
 location: "Location: North Main Street,Brooklyn Australia"
 draft: false
 bg_image: "/images/featue-bg.jpg"
+layout: faq
 ---
+
+
+
 
 ### Welcome to Airspace!
 

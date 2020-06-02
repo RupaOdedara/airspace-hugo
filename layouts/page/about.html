@@ -80,15 +80,11 @@
                 <li><a href="#approach" data-toggle="tab">Approach</a></li>
               </ul>
               <div class="tab-content">
-                <div id="vision" class="tab-pane fade active in">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis ducimus facere repellat harum, eius cupiditate, aliquam aut deserunt. Nemo illo ex impedit autem quod nobis architecto, velit quasi, aut voluptas porro natus. Fuga magnam perspiciatis fugit, placeat possimus officia non ducimus voluptatum aspernatur ad quidem neque accusantium repudiandae cupiditate nobis corporis, cum facere iusto, modi cumque consectetur saepe. Officia, molestiae tempore! Consequatur ipsa consequuntur saepe suscipit vero laudantium, mollitia, quaerat soluta nihil non tempore, quos dignissimos quasi ab officiis illum numquam quibusdam ducimus, veritatis ad. Quia, aliquid. Quaerat quos ducimus ipsam amet minus temporibus eos sequi alias hic nemo.</p>
-                </div>
-                <div id="mission" class="tab-pane fade">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis ducimus facere repellat harum, eius cupiditate, aliquam aut deserunt. Nemo illo ex impedit autem quod nobis architecto, velit quasi, aut voluptas porro natus. Fuga magnam perspiciatis fugit, placeat possimus officia non ducimus voluptatum aspernatur ad quidem neque accusantium repudiandae cupiditate nobis corporis, cum facere iusto, modi cumque consectetur saepe. Officia, molestiae tempore! Consequatur ipsa consequuntur saepe suscipit vero laudantium, mollitia, quaerat soluta nihil non tempore, quos dignissimos quasi ab officiis illum numquam quibusdam ducimus, veritatis ad. Quia, aliquid. Quaerat quos ducimus ipsam amet minus temporibus eos sequi alias hic nemo.</p>
-                </div>
-                <div id="approach" class="tab-pane fade">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis ducimus facere repellat harum, eius cupiditate, aliquam aut deserunt. Nemo illo ex impedit autem quod nobis architecto, velit quasi, aut voluptas porro natus. Fuga magnam perspiciatis fugit, placeat possimus officia non ducimus voluptatum aspernatur ad quidem neque accusantium repudiandae cupiditate nobis corporis, cum facere iusto, modi cumque consectetur saepe. Officia, molestiae tempore! Consequatur ipsa consequuntur saepe suscipit vero laudantium, mollitia, quaerat soluta nihil non tempore, quos dignissimos quasi ab officiis illum numquam quibusdam ducimus, veritatis ad. Quia, aliquid. Quaerat quos ducimus ipsam amet minus temporibus eos sequi alias hic nemo.</p>
-                </div>
+                {{ range .Params.tab_commomn }}
+                  <div id="{{ .name }}" class="tab-pane fade {{ .active }}">
+                    <p>{{ .description }}</p>
+                  </div>
+                {{ end }}
               </div>
             </div>
           </div>
